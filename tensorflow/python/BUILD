@@ -2417,6 +2417,11 @@ tf_gen_op_wrapper_private_py(
 )
 
 tf_gen_op_wrapper_private_py(
+    name = "training_ranger21_ops_gen",
+    out = "training/gen_training_ranger21_ops.py",
+)
+
+tf_gen_op_wrapper_private_py(
     name = "ragged_array_ops_gen",
     visibility = [
         "//learning/brain/contrib/text:__pkg__",
@@ -4636,6 +4641,7 @@ py_library(
         ":summary",
         ":training_ops_gen",
         ":training_ali_ops_gen",
+        ":training_ranger21_ops_gen",
         ":training_util",
         ":util",
         ":variable_scope",

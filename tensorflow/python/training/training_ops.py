@@ -26,3 +26,6 @@ from tensorflow.python.training.gen_training_ops import *
 # pylint: enable=wildcard-import
 
 from tensorflow.python.training.gen_training_ali_ops import *
+
+from tensorflow.python.training.gen_training_ranger21_ops import *
+

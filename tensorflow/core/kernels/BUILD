@@ -1087,7 +1087,7 @@ tf_kernel_library(
 tf_kernel_library(
     name = "concat_op",
     prefix = "concat_op",
-    deps = ARRAY_DEPS + mkl_deps(),
+    deps = ARRAY_DEPS,
 )
 
 tf_kernel_library(
@@ -6269,6 +6269,31 @@ tf_kernel_library(
         "//tensorflow/core:framework",
         "//tensorflow/core:lib",
         "//tensorflow/core:training_ali_ops_op_lib",
+        "//third_party/eigen3",
+    ],
+)
+
+tf_kernel_library(
+    name = "training_ranger21_ops",
+    hdrs = [
+        "training_ranger21_ops.h",
+        "training_ali_op_helpers.h"
+    ],
+    srcs = ["training_ranger21_ops.cc"],
+    gpu_srcs = [
+        "training_ranger21_ops_gpu.cu.cc",
+        "training_ranger21_ops_gpu.h",
+        "training_ranger21_ops.h"
+    ],
+    copts = ["-g"],
+    deps = [
+        ":bounds_check",
+        ":training_op_helpers",
+        ":variable_ops",
+        ":kv_variable_ops",
+        "//tensorflow/core:framework",
+        "//tensorflow/core:lib",
+        "//tensorflow/core:training_ranger21_ops_op_lib",
         "//third_party/eigen3",
     ],
 )

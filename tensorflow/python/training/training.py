@@ -35,6 +35,7 @@ from tensorflow.python.training.adagrad_decay_v2 import AdagradDecayOptimizerV2
 from tensorflow.python.training.proximal_adagrad import ProximalAdagradOptimizer
 from tensorflow.python.training.adam import AdamOptimizer
 from tensorflow.python.training.adam_async import AdamAsyncOptimizer
+from tensorflow.python.training.ranger21 import Ranger21Optimizer
 from tensorflow.python.training.ftrl import FtrlOptimizer
 from tensorflow.python.training.experimental.loss_scale_optimizer import MixedPrecisionLossScaleOptimizer
 from tensorflow.python.training.experimental.mixed_precision import enable_mixed_precision_graph_rewrite

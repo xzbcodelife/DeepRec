@@ -971,7 +971,6 @@ tf_cuda_library(
         ":framework_internal",
         "@com_google_absl//absl/base",
         "@sparsehash_c11//:dense_hash_map",
-        "@com_github_google_leveldb//:leveldb",
     ],
 )
 
@@ -1219,6 +1218,7 @@ tf_gen_op_libs(
         "summary_ops",
         "training_ops",
         "training_ali_ops",
+        "training_ranger21_ops",
     ],
     deps = [
         ":lib",
@@ -1670,6 +1670,7 @@ cc_library(
         "//tensorflow/core/kernels:summary_kernels",
         "//tensorflow/core/kernels:training_ops",
         "//tensorflow/core/kernels:training_ali_ops",
+        "//tensorflow/core/kernels:training_ranger21_ops",
         "//tensorflow/core/kernels:word2vec_kernels",
     ] + tf_additional_cloud_kernel_deps() + if_not_windows([
         "//tensorflow/core/kernels:fact_op",

@@ -471,6 +471,8 @@ struct ApplyAdamAsync<GPUDevice, T> {
                   typename TTypes<T>::ConstScalar epsilon,
                   typename TTypes<T>::ConstFlat grad, bool use_nesterov) {
   int32 grad_size = grad.size();
+  
+  std::cout << "in ApplyAdamAsync_GPUDevice" << std::endl;
 
   GpuLaunchConfig config = GetGpuLaunchConfig(grad_size, d);
   GpuLaunchKernel(ApplyAdamAsyncKernel<T>, config.block_count,
